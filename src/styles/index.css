@@ -1,2 +1,7 @@
 @import "global.css";
 @import "theme.css";
+
+input, textarea {
+  background-color: white !important;
+  color: black !important;
+}

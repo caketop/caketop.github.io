@@ -1,0 +1,23 @@
+---
+import { generateImage } from "astro-eleventy-img";
+
+const { jpeg } = generateImage(
+  "src/assets/jordemort.jpg",
+  {
+    widths: [200],
+    formats: ["jpeg"],
+    outputDir: "public/assets/images/jordemort",
+    urlPath: "/assets/images/jordemort",
+  }
+);
+---
+<figure class="p-3">
+<a href="https://jordemort.dev/"><img
+  class="rounded-full"
+  src={jpeg[0].url}
+  width={jpeg[0].width}
+  height={jpeg[0].height}
+  alt="Jordan Webb"
+/></a>
+<figcaption class="text-center"><a href="https://jordemort.dev/">Jordan Webb</a><br />Founder</figcaption>
+</figure>

@@ -4,24 +4,9 @@ import HeroImage from "~/components/hero-image.astro";
 
 const links = [
   {
-    url: "https://astro.build/",
-    description: "Astro's official website",
-    icon: "mdi:home",
-  },
-  {
-    url: "https://github.com/withastro/astro",
-    description: "Astro on GitHub",
+    url: "https://github.com/caketop",
+    description: "Caketop on GitHub",
     icon: "fa-brands:github-alt",
-  },
-  {
-    url: "https://astro.build/chat",
-    description: "Astro on Discord",
-    icon: "fa-brands:discord",
-  },
-  {
-    url: "https://twitter.com/astrodotbuild",
-    description: "Astro on Twitter",
-    icon: "fa-brands:twitter",
   },
 ];
 ---
@@ -30,7 +15,7 @@ const links = [
   <div class="absolute inset-0 overflow-hidden opacity-40">
     <HeroImage />
   </div>
-  <ul class="relative grid grid-cols-2 gap-4 sm:grid-cols-4">
+  <ul class="relative grid grid-cols-2 gap-4 sm:grid-cols-1">
     {
       links.map((link) => (
         <li>

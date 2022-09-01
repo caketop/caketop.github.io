@@ -1,15 +1,6 @@
 ---
-import Team from "~/components/team.astro";
-// import Compatibility from "~/components/compatibility.astro";
-import Contact from "~/components/contact.astro";
-import Features from "~/components/features.astro";
-import Services from "~/components/services.astro";
-
-import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
-import Intro from "~/components/intro.astro";
-// import Showcase from "~/components/showcase.astro";
-import Splash from "~/components/splash.astro";
+import Splashthanks from "~/components/splashthanks.astro";
 import "~/styles/index.css";
 
 const { site } = Astro;
@@ -31,7 +22,7 @@ const description =
     <meta name="theme-color" content="#ffffff">
 
 
-    <title>Caketop: Operating systems as a service</title>
+    <title>Caketop: Thank you!</title>
     <meta name="description" content={description} />
 
     <!-- fonts -->
@@ -90,13 +81,6 @@ const description =
     class="h-full overflow-x-hidden text-base bg-default text-default selection:bg-secondary selection:text-white"
   >
     <Header />
-    <Splash />
-    <div class="px-8 py-32 space-y-24">
-      <Intro />
-      <Services />
-      <Team />
-      <Contact />
-    </div>
-    <Footer />
+    <Splashthanks />
   </body>
 </html>

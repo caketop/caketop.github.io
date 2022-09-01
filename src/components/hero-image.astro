@@ -4,12 +4,15 @@ import { generateImage } from "astro-eleventy-img";
 const widths = [450, 800, 1200];
 const sizes = "100vw";
 
-const { webp, avif, jpeg } = generateImage("src/assets/moon.jpg", {
-  widths,
-  formats: ["webp", "avif", "jpeg"],
-  outputDir: "public/assets/images/hero",
-  urlPath: "/assets/images/hero",
-});
+const { webp, avif, jpeg } = generateImage(
+  "src/assets/american-heritage-chocolate-5K5Nc3AGF1w-unsplash.jpg",
+  {
+    widths,
+    formats: ["webp", "avif", "jpeg"],
+    outputDir: "public/assets/images/hero",
+    urlPath: "/assets/images/hero",
+  }
+);
 
 const avifSrcset = avif.map(({ srcset }) => srcset).join(",");
 const webpSrcset = webp.map(({ srcset }) => srcset).join(",");
@@ -25,6 +28,6 @@ const jpegSrcset = jpeg.map(({ srcset }) => srcset).join(",");
     src={jpeg[1].url}
     width={jpeg[1].width}
     height={jpeg[1].height}
-    alt="The ridged surface of the moon"
+    alt="Frosting a cake"
   />
 </picture>
