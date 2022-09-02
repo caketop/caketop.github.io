@@ -1,0 +1,20 @@
+---
+import cupcakes from "~/assets/carolyn-christine-PzRF6Xb5aAA-unsplash.jpg";
+import { getPicture } from "@astrojs/image";
+
+const hero = await getPicture({
+  src: cupcakes,
+  widths: [450, 800, 1200],
+  formats: ["webp", "avif", "jpeg"],
+});
+const sizes = "100vw";
+---
+
+<picture>
+  {hero.sources.map((attrs) => <source {...attrs} {sizes} />)}
+  <img
+    class="object-cover w-full h-full"
+    {...hero.image}
+    alt="Cupcakes"
+  />
+</picture>
