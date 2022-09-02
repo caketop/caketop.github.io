@@ -1,33 +1,20 @@
 ---
-import { generateImage } from "astro-eleventy-img";
+import chocolateCake from "~/assets/american-heritage-chocolate-5K5Nc3AGF1w-unsplash.jpg";
+import { getPicture } from "@astrojs/image";
 
-const widths = [450, 800, 1200];
+const hero = await getPicture({
+  src: chocolateCake,
+  widths: [450, 800, 1200],
+  formats: ["webp", "avif", "jpeg"],
+});
 const sizes = "100vw";
-
-const { webp, avif, jpeg } = generateImage(
-  "src/assets/american-heritage-chocolate-5K5Nc3AGF1w-unsplash.jpg",
-  {
-    widths,
-    formats: ["webp", "avif", "jpeg"],
-    outputDir: "public/assets/images/hero",
-    urlPath: "/assets/images/hero",
-  }
-);
-
-const avifSrcset = avif.map(({ srcset }) => srcset).join(",");
-const webpSrcset = webp.map(({ srcset }) => srcset).join(",");
-const jpegSrcset = jpeg.map(({ srcset }) => srcset).join(",");
 ---
 
 <picture>
-  <source type="image/avif" srcset={avifSrcset} {sizes} />
-  <source type="image/webp" srcset={webpSrcset} {sizes} />
-  <source type="image/jpeg" srcset={jpegSrcset} {sizes} />
+  {hero.sources.map((attrs) => <source {...attrs} {sizes} />)}
   <img
     class="object-cover w-full h-full"
-    src={jpeg[1].url}
-    width={jpeg[1].width}
-    height={jpeg[1].height}
+    {...hero.image}
     alt="Frosting a cake"
   />
 </picture>

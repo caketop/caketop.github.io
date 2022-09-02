@@ -1,23 +1,19 @@
 ---
-import { generateImage } from "astro-eleventy-img";
-
-const { jpeg } = generateImage(
-  "src/assets/jordemort.jpg",
-  {
-    widths: [200],
-    formats: ["jpeg"],
-    outputDir: "public/assets/images/jordemort",
-    urlPath: "/assets/images/jordemort",
-  }
-);
+import { Image } from "@astrojs/image/components";
+import jordemort from "~/assets/jordemort.jpg";
 ---
+
 <figure class="p-3">
-<a href="https://jordemort.dev/"><img
-  class="rounded-full"
-  src={jpeg[0].url}
-  width={jpeg[0].width}
-  height={jpeg[0].height}
-  alt="Jordan Webb"
-/></a>
-<figcaption class="text-center"><a href="https://jordemort.dev/">Jordan Webb</a><br />Founder</figcaption>
+  <a href="https://jordemort.dev/"
+    ><Image
+      src={jordemort}
+      width={200}
+      height={200}
+      alt="Jordan Webb"
+      class="rounded-full"
+    />
+  </a>
+  <figcaption class="text-center">
+    <a href="https://jordemort.dev/">Jordan Webb</a><br />Founder
+  </figcaption>
 </figure>
