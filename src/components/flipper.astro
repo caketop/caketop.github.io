@@ -100,10 +100,10 @@ const duration = String(rawDuration) + "s";
   }
 </style>
 <div>
-  <div class="flipper-div">
+  <div class="flipper-div p-2">
     {
       platforms.map((platform, i) => (
-        <span class="flipper-item pt-2" style={"--delay: " + String(i * 2.5) + "s"}>
+        <span class="flipper-item" style={"--delay: " + String(i * 2.5) + "s"}>
           {platform}
         </span>
       ))
