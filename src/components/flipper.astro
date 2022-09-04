@@ -1,4 +1,6 @@
 ---
+// derived from https://codepen.io/gulshansainis/pen/yLymJRd?editors=1001
+
 const platforms = [
   "Linux",
   "IoT",
@@ -52,24 +54,19 @@ const keyframes = createKeyframes("flip", {
   },
   [a]: {
     opacity: "0",
-    /* "-webkit-transform": "rotateX(-180deg)", */
-    /* transform: "rotateX(-180deg)", */
   },
   [b]: {
     opacity: "1",
     "-webkit-transform": "translateY(0px)",
     transform: " translateY(0px)",
-    /* color: "greenyellow", */
   },
   [c]: {
     opacity: "1",
-    /* color: "red", */
     "-webkit-transform": "translateY(0px)",
     transform: "translateY(0px)",
   },
   [d]: {
     opacity: "0",
-    /* color: "blue", */
     "-webkit-transform": "translateY(-90px)",
     transform: "translateY(-90px)",
   },
@@ -80,26 +77,37 @@ const keyframes = createKeyframes("flip", {
 const duration = String(rawDuration) + "s";
 ---
 
-<style type="text/css" is:inline set:html={keyframes}></style>
-<style define:vars={{ duration }}>
+<style type="text/css" is:inline set:html={keyframes}>
 
-.flipper-item {
-  animation-name: flip;
-  animation-duration: var(--duration);
-  animation-delay: var(--delay, 0s);
-  animation-iteration-count: infinite;
-  position: absolute;
-  color: #90caf9;
-  opacity: 0;
-  top: 0;
-  left: 0;
-}
 </style>
-<div class="flipper inline">
-  <div style="position: relative; display: inline-block;">
-    &nbsp;<span style="opacity: 0;">Linux,</span>
-    {platforms.map((platform, i) =>
-      <span class="flipper-item" style={"--delay: " + String(i * 2.5) + "s"}> {platform}, </span>
-    )}
+<style define:vars={{ duration }}>
+  .flipper-div {
+    position: relative;
+  }
+
+  .flipper-item {
+    animation-name: flip;
+    animation-duration: var(--duration);
+    animation-delay: var(--delay, 0s);
+    animation-iteration-count: infinite;
+    position: absolute;
+    color: #90caf9;
+    opacity: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  }
+</style>
+<div>
+  <div class="flipper-div">
+    {
+      platforms.map((platform, i) => (
+        <span class="flipper-item" style={"--delay: " + String(i * 2.5) + "s"}>
+          {" "}
+          {platform},{" "}
+        </span>
+      ))
+    }
   </div>
 </div>
