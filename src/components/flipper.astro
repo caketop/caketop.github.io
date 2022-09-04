@@ -97,9 +97,9 @@ const duration = String(rawDuration) + "s";
 </style>
 <div class="flipper inline">
   <div style="position: relative; display: inline-block;">
-    <span style="opacity: 0;">Linux,</span>
+    &nbsp;<span style="opacity: 0;">Linux,</span>
     {platforms.map((platform, i) =>
-      <span class="flipper-item" style={"--delay: " + String(i * 2.5) + "s"}>{platform}, </span>
+      <span class="flipper-item" style={"--delay: " + String(i * 2.5) + "s"}> {platform}, </span>
     )}
   </div>
 </div>
