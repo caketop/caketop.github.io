@@ -1,0 +1,105 @@
+---
+const platforms = [
+  "Linux",
+  "IoT",
+  "Cloud",
+  "Docker",
+  "AWS",
+  "VMware",
+  "GCP",
+  "OpenStack",
+];
+
+function toPct(seconds: number, duration: number): string {
+  return String(Math.floor((seconds / duration) * 100)) + "%";
+}
+
+function createKeyframes(
+  name: string,
+  frames: Record<string, Record<string, string>>
+): string {
+  var css = "\n@keyframes " + name + " {\n";
+
+  Object.entries(frames).map((entry) => {
+    const key = entry[0];
+    const frame = entry[1];
+
+    css += "\t" + key + " {\n";
+
+    Object.entries(frame).map((style) => {
+      const prop = style[0];
+      const value = style[1];
+
+      css += "\t\t" + prop + ":" + value + ";\n";
+    });
+
+    css += "\t}\n";
+  });
+
+  return css + "}\n";
+}
+
+const rawDuration = 2.5 * platforms.length;
+
+const a = toPct(0.3, rawDuration);
+const b = toPct(0.75, rawDuration);
+const c = toPct(2.285, rawDuration);
+const d = toPct(3.375, rawDuration);
+
+const keyframes = createKeyframes("flip", {
+  "0%": {
+    opacity: "0",
+  },
+  [a]: {
+    opacity: "0",
+    /* "-webkit-transform": "rotateX(-180deg)", */
+    /* transform: "rotateX(-180deg)", */
+  },
+  [b]: {
+    opacity: "1",
+    "-webkit-transform": "translateY(0px)",
+    transform: " translateY(0px)",
+    /* color: "greenyellow", */
+  },
+  [c]: {
+    opacity: "1",
+    /* color: "red", */
+    "-webkit-transform": "translateY(0px)",
+    transform: "translateY(0px)",
+  },
+  [d]: {
+    opacity: "0",
+    /* color: "blue", */
+    "-webkit-transform": "translateY(-90px)",
+    transform: "translateY(-90px)",
+  },
+  "80%": { opacity: "0" },
+  "100%": { opacity: "0" },
+});
+
+const duration = String(rawDuration) + "s";
+---
+
+<style type="text/css" is:inline set:html={keyframes}></style>
+<style define:vars={{ duration }}>
+
+.flipper-item {
+  animation-name: flip;
+  animation-duration: var(--duration);
+  animation-delay: var(--delay, 0s);
+  animation-iteration-count: infinite;
+  position: absolute;
+  color: #90caf9;
+  opacity: 0;
+  top: 0;
+  left: 0;
+}
+</style>
+<div class="flipper inline">
+  <div style="position: relative; display: inline-block;">
+    <span style="opacity: 0;">Linux,</span>
+    {platforms.map((platform, i) =>
+      <span class="flipper-item" style={"--delay: " + String(i * 2.5) + "s"}>{platform}, </span>
+    )}
+  </div>
+</div>
