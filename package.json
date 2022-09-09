@@ -15,7 +15,7 @@
     "@astrojs/image": "^0.5.1",
     "@astrojs/tailwind": "^1.0.0",
     "@types/micromodal": "^0.3.3",
-    "astro": "^1.1.6",
+    "astro": "^1.1.8",
     "astro-compress": "^1.0.6",
     "astro-icon": "^0.7.3",
     "prettier": "2.7.1",
