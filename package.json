@@ -16,7 +16,7 @@
     "@astrojs/tailwind": "^1.0.0",
     "@types/micromodal": "^0.3.3",
     "astro": "^1.1.8",
-    "astro-compress": "^1.0.6",
+    "astro-compress": "^1.0.7",
     "astro-icon": "^0.7.3",
     "prettier": "2.7.1",
     "prettier-plugin-astro": "^0.5.0",
