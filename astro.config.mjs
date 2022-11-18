@@ -7,5 +7,5 @@ import compress from "astro-compress";
 // https://astro.build/config
 export default defineConfig({
   site: "https://caketop.app/",
-  integrations: [tailwind(), image(), compress()]
+  integrations: [tailwind(), image({serviceEntryPoint: '@astrojs/image/sharp'}), compress()]
 });
