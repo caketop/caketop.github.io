@@ -4,6 +4,9 @@ import ContentSection from "~/components/content-section.astro";
 
 <ContentSection title="Rates" id="rates">
   <table>
+    <tr>
+      <th colspan="2">By the hour</th>
+    </tr>
     <tr class="border">
       <td class="pl-1 pr-8">First hour</td>
       <td class="pr-1 text-right font-mono">$200 USD</td>
@@ -13,5 +16,23 @@ import ContentSection from "~/components/content-section.astro";
       <td class="pr-1 text-right font-mono">$150 USD</td>
     </tr>
   </table>
-  <p>All jobs are billed at a minimum of 1 hour. Additional work is billed in 1 hour increments.</p>
+  <ul class="max-w-prose list-disc">
+    <li>All jobs are billed at a minimum of 1 hour.</li>
+    <li>Work beyond the first hour is billed in 1 hour increments.</li>
+  </ul>
+  <table>
+    <tr>
+      <th colspan="2">By the month</th>
+    </tr>
+    <tr class="border">
+      <td class="pl-1 pr-8">Monthly retainer</td>
+      <td class="pr-1 text-right font-mono">$500 USD</td>
+    </tr>
+  </table>
+  <ul class="max-w-prose list-disc">
+    <li>Prioritization for your project</li>
+    <li>Includes up to 5 hours of work per month</li>
+    <li>Additional hours billed at $150 USD</li>
+    <li>Unused hours do not roll over between months</li>
+  </ul>
 </ContentSection>
