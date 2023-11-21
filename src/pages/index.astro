@@ -1,28 +1,12 @@
 ---
-import Page from "~/layouts/Page.astro";
+import ClosedPage from "~/layouts/ClosedPage.astro";
 import Team from "~/components/team.astro";
-import Contact from "~/components/contact.astro";
-import Services from "~/components/services.astro";
 import Footer from "~/components/footer.astro";
-import Intro from "~/components/intro.astro";
-import Splash from "~/components/splash.astro";
-import Flipper from "~/components/flipper.astro";
-import Terms from "~/components/terms.astro";
-import Rates from "~/components/rates.astro";
+import Closed from "~/components/closed.astro";
 ---
 
-<Page>
-  <Splash>
-    Your app on <Flipper />
-    like frosting on a cake
-  </Splash>
+<ClosedPage>
   <div class="px-8 py-32 space-y-24">
-    <Intro />
-    <Services />
-    <Team />
-    <Terms />
-    <Rates />
-    <Contact />
+    <Closed />
   </div>
-  <Footer />
-</Page>
+</ClosedPage>

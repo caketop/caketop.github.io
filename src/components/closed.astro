@@ -1,0 +1,33 @@
+---
+import { Icon } from "astro-icon";
+import ContentSection from "~/components/content-section.astro";
+import { Image } from "@astrojs/image/components";
+import jordemort from "~/assets/jordemort.jpg";
+---
+
+<ContentSection title="Caketop" id="intro">
+  <Icon slot="eyebrow" name="logomark" class="h-32" />
+  <Fragment slot="lead">
+    Caketop is currently on hiatus; we are not accepting any new consulting engagements at this time.
+    Thank you for your interest!
+  </Fragment>
+  <figure class="p-3">
+    <a href="https://jordemort.dev/"
+      ><Image
+        src={jordemort}
+        width={200}
+        height={200}
+        alt="Jordan Webb"
+        class="rounded-full"
+      /></a>
+    <figcaption class="text-center">
+      <a href="https://jordemort.dev/" class="font-semibold">Jordan Webb</a><br /><span class="text-sm">Proprietor</span>
+    </figcaption>
+  </figure>
+  <p class="max-w-prose">
+    Jordan is an industry veteran with extensive experience in software packaging, distribution, and compliance.
+    Jordan's <b><a href="https://jordemort.dev/portfolio/">previous experience</a></b> includes building the operating system for Cleversafe (now part of IBM Cloud)
+    storage appliances, GitHub Enterprise Server, and home automation hub firmware.
+  </p>
+
+</ContentSection>
